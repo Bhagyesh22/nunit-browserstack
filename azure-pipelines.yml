@@ -17,7 +17,10 @@ variables:
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-
+- task: BrowserStackConfig@0
+  inputs:
+    BrowserStackServiceEndPoint: 'Bhagyesh''s Connection'
+    
 - task: CmdLine@2
   inputs:
     script: |
