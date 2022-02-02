@@ -14,22 +14,17 @@ variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
 
-  steps:
-  - script: echo Hello, world!
-    displayName: 'Run a one-line script'
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
 
-  - task: BrowserStackConfig@0
-    inputs:
-      BrowserStackServiceEndPoint: 'BrowserStack Bhagyesh''s Connection'
-  - task: CmdLine@2
-    inputs:
-      script: |
-        dotnet restore
-        dotnet test
+- task: CmdLine@2
+  inputs:
+    script: |
+      dotnet restore
+      dotnet test
         
-  - task: BrowserStackResults@1
-    inputs:
-      browserstackProduct: 'automate'
-  - script: |
-      echo Add other tasks to build, test, and deploy your project.
-      echo See https://aka.ms/yaml
+- task: BrowserStackResults@1
+  inputs:
+    browserstackProduct: 'automate'
+
